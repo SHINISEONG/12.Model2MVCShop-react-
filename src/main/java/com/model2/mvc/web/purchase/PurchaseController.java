@@ -1,14 +1,10 @@
 package com.model2.mvc.web.purchase;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 import javax.servlet.http.HttpSession;
-import javax.websocket.Session;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -87,8 +83,8 @@ public class PurchaseController {
 		purchaseService.addPurchase(purchase);
 		
 		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.addObject("purchase", purchase);
-		modelAndView.setViewName("forward:/purchase/addPurchase.jsp");
+		session.setAttribute("purchase", purchase);
+		modelAndView.setViewName("redirect:/purchase/addPurchase.jsp");
 		return modelAndView;
 	
 	}

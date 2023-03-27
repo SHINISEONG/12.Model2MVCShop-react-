@@ -86,10 +86,12 @@
 	                 </li>
 	                 
 	                 <li><a href="#">etc...</a></li>
+	                 <li><a href="#">채팅하기</a></li>
 	             </ul>
 	           
 	             <ul class="nav navbar-nav navbar-right">
 	                <li><a href="#">로그아웃</a></li>
+	                
 	            </ul>
 	            
 	            <c:if test = "${user.role eq 'user' }">
@@ -161,6 +163,16 @@
 	 	//============= 장바구니보기 ============
 	 	$( ".glyphicon" ).on("click" , function() {
 			$(self.location).attr("href","../purchase/listCart");
+		});
+	 	
+	 	//=========== 채팅 하기 =============
+	 	$( "a:contains('채팅하기')" ).on("click" , function() {
+	 		
+	 		popWin 
+			= window.open("http://localhost:3001?userId=${user.userId}",
+										"popWin", 
+										"left=300,top=200,width=780,height=500,marginwidth=0,marginheight=0");
+	 		
 		});
 	 	
 		

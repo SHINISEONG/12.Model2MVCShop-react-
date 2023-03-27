@@ -35,6 +35,10 @@
     
      <!--  ///////////////////////// JavaScript ////////////////////////// -->
 	<script type="text/javascript">
+	window.addEventListener('beforeunload', (event)=>{
+		event.preventDefault();
+		
+	});
 		
 		//============= 회원정보수정 Event  처리 =============	
 		 $(function() {
